@@ -11,7 +11,6 @@ namespace Entities
         [Key]
         public int Id { get; set; }
         public int X { get; set; }
-        public int ArtPieceId { get; set; }
         public int Y { get; set; }
         public string Color { get; set; }
     }

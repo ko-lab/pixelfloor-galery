@@ -10,7 +10,7 @@ namespace KolabFloor.RequestModels
     {
         public string Title { get; set; }
         public string Artist { get; set; }
-        public IEnumerable<ArtData> ArtData { get; set; }
+        public IEnumerable<ArtData> Data { get; set; }
 
     }
 }

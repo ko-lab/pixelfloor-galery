@@ -32,7 +32,7 @@ namespace KolabFloor.Controllers
 
                 ArtPiece artPiece = new ArtPiece()
                 {
-                    Data = artPieceModel.ArtData,
+                    Data = artPieceModel.Data,
                     CreatedAt = DateTime.UtcNow.Date,
                     Title = artPieceModel.Title,
                     Artist = artPieceModel.Artist
