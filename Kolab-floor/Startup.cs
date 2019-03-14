@@ -27,10 +27,19 @@ namespace KolabFloor
         }
 
         public IConfiguration Configuration { get; }
-
+        public readonly string CORS = "origin";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(CORS,
+                    builder =>
+                        {
+                            builder.WithOrigins("http://10.90.154.80");
+                        }
+                    );
+            });
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddDbContext<RepositoryContext>(o => o.UseSqlite("Data Source=floorart.db", b => b.MigrationsAssembly("Entities")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
